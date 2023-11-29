@@ -1,0 +1,32 @@
+# Set the default behavior, in case users don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files that should always use LF line endings.
+*.sh text eol=lf
+*.py text eol=lf
+
+# Ensure all .bat files use CRLF line endings.
+*.bat text eol=crlf
+
+# Treat all .jpg, .png, .gif files as binary, preventing Git from attempting
+# any line ending conversions or text-based merging.
+*.jpg binary
+*.png binary
+*.gif binary
+
+# Ensure that certain files use native line endings on checkout.
+*.html text
+*.css text
+*.js text
+
+# Custom merge strategy for specific files
+*.txt merge=ours
+
+# Define linguist attributes for GitHub
+*.md linguist-language=Markdown
+*.html linguist-language=HTML
+
+# Exclude specific files from language statistics on GitHub
+documentation/* linguist-documentation
+build/* linguist-vendored
+
